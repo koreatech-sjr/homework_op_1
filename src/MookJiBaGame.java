@@ -41,8 +41,8 @@ public class MookJiBaGame extends Application{
 	private ImageView compView = new ImageView();
 	private TextField gameStatus = new TextField();
 	// 게임에 필요한 멤버
-	private Player computer = new ComputerPlayer();
 	private Player user = new UserPlayer();
+	private Player computer = new ComputerPlayer(this.user);
 	private HandType userHand;
 	private HandType compHand;
 	private boolean isGameStarted = false;

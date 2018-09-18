@@ -16,4 +16,8 @@ public class UserPlayer extends Player {
 	public HandType nextHand() {
 		return hand;
 	}
+	
+	public HandType getUserHand() {
+		return this.hand;
+	}
 }

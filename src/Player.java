@@ -9,5 +9,8 @@
  */
 public abstract class Player {
 	public void setHand(HandType hand) {}
+	public HandType getUserHand() {
+		return null;
+		}
 	public abstract HandType nextHand();
 }

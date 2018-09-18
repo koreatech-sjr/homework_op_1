@@ -9,10 +9,13 @@
  */
 public class ComputerPlayer extends Player {
 	private PlayingStrategy strategy;
+	private Player user;
 	
-	public ComputerPlayer() {
-		strategy = new RandomStrategy(); 
+	public ComputerPlayer(Player User) {
+		this.user = User;
+		strategy = new LastHandBasedStrategy(this.user); 
 	}
+	
 	public void setStrategy(PlayingStrategy strategy) {
 		this.strategy = strategy;
 	}

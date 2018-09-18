@@ -16,7 +16,7 @@ public class RandomStrategy implements PlayingStrategy{
 			return HandType.BA;
 		}
 	}
-	//TODO : seLastUserHand()
+
 }
 
 //지난번에 낸거를 안낸 거 보다 높다. 지난번 낸건 20% 다른거 2개는 각각 40% 
