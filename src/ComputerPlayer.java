@@ -13,7 +13,7 @@ public class ComputerPlayer extends Player {
 	
 	public ComputerPlayer(Player User) {
 		this.user = User;
-		strategy = new LastHandBasedStrategy(this.user); 
+		strategy = new NewStrategy(this.user); 
 	}
 	
 	public void setStrategy(PlayingStrategy strategy) {
