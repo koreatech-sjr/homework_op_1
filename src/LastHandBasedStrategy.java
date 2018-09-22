@@ -13,19 +13,37 @@ public class LastHandBasedStrategy implements PlayingStrategy {
 	@Override
 	public HandType nextHand() {
 		this.setLastUserHand();
-		// TODO Auto-generated method stub
-		randomNumber = generator.nextInt(3);
-		switch(randomNumber) {
-		case 1:
-			return HandType.MOOK;
-		case 2:
-			return HandType.JI;
-		default:
-			return HandType.BA;
+		randomNumber = generator.nextInt(10);
+		
+		switch(prevHand) {
+			case MOOK:
+				if(randomNumber < 2)
+					return HandType.MOOK;
+				else if(randomNumber < 6)
+					return HandType.JI;
+				else
+					return HandType.BA;
+			case JI:
+				if(randomNumber < 2)
+					return HandType.JI;
+				else if(randomNumber < 6)
+					return HandType.MOOK;
+				else
+					return HandType.BA;
+			case BA:
+				if(randomNumber < 2)
+					return HandType.BA;
+				else if(randomNumber < 6)
+					return HandType.MOOK;
+				else
+					return HandType.JI;
 		}
+		return null;
 	}
+	
 	public void setLastUserHand() {
 		this.prevHand = this.user.getUserHand();
 		System.out.println(this.prevHand);
 	}
+	
 }
